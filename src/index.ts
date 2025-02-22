@@ -14,11 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/api/feedbacks", feedbackRouter);
-const staticPath = path.join(__dirname, "../client/dist");
 
 // Deployment
 if (process.env.NODE_ENV === "production") {
-  const staticPath = path.join(__dirname, "../client/dist");
+  const staticPath = path.join(__dirname, "../public");
   console.log({ staticPath });
   app.use(express.static(staticPath));
   app.get("*", (req: Request, res: Response) => {
