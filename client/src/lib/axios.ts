@@ -1,6 +1,6 @@
 ﻿import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://feedbacks-app-mern.onrender.com/api",
+  baseURL: "http://localhost:8080/api",
 });
 
