@@ -9,9 +9,9 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'https://feedbacks-app-mern.onrender.com/api',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        target: 'https://feedbacks-app-mern.onrender.com',
+        // changeOrigin: true,
+        // rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   }
