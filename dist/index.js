@@ -23,7 +23,10 @@ const feedback_router_1 = require("./routers/feedback.router");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"]
+}));
 app.use("/api/feedbacks", feedback_router_1.feedbackRouter);
 // Deployment
 if (process.env.NODE_ENV === "production") {
