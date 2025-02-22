@@ -25,9 +25,10 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, cors_1.default)());
 app.use("/api/feedbacks", feedback_router_1.feedbackRouter);
+const staticPath = path_1.default.join(__dirname, "../client/dist");
 // Deployment
 if (process.env.NODE_ENV === "production") {
-    const staticPath = path_1.default.join(__dirname, "../../client/dist");
+    const staticPath = path_1.default.join(__dirname, "../client/dist");
     console.log({ staticPath });
     app.use(express_1.default.static(staticPath));
     app.get("*", (req, res) => {
